@@ -47,6 +47,7 @@ const outcomes = {
 };
 
 const playRound = (humanChoice, computerChoice) => {
+  console.log(`You chose: ${humanChoice}, Computer chose: ${computerChoice}`);
   const result = outcomes[humanChoice][computerChoice];
   switch (result) {
     case "win":
