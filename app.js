@@ -3,7 +3,12 @@ let computerScore = 0;
 let rounds = 0;
 
 const getHumanChoice = () => {
-  return prompt("Rock, Paper, or Scissors?").toLowerCase();
+  let choice;
+  const validChoices = ["rock", "paper", "scissors"];
+  do {
+    choice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+  } while (!validChoices.includes(choice));
+  return choice;
 };
 
 const getComputerChoice = () => {
