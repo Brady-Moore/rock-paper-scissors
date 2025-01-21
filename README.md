@@ -1,4 +1,4 @@
-#Rock, Paper, Scissors
+# Rock, Paper, Scissors
 
 This game is currently run entirely in the browser console.
 
