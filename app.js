@@ -40,43 +40,24 @@ const loseRound = () => {
   );
 };
 
+const outcomes = {
+  rock: { rock: "tie", paper: "lose", scissors: "win" },
+  paper: { rock: "win", paper: "tie", scissors: "lose" },
+  scissors: { rock: "lose", paper: "win", scissors: "tie" },
+};
+
 const playRound = (humanChoice, computerChoice) => {
-  if (humanChoice === "rock") {
-    switch (computerChoice) {
-      case "rock":
-        console.log("It's a tie!");
-        break;
-      case "paper":
-        loseRound();
-        break;
-      case "scissors":
-        winRound();
-        break;
-    }
-  } else if (humanChoice === "paper") {
-    switch (computerChoice) {
-      case "rock":
-        winRound();
-        break;
-      case "paper":
-        console.log("It's a tie!");
-        break;
-      case "scissors":
-        loseRound();
-        break;
-    }
-  } else if (humanChoice === "scissors") {
-    switch (computerChoice) {
-      case "rock":
-        loseRound();
-        break;
-      case "paper":
-        winRound();
-        break;
-      case "scissors":
-        console.log("It's a tie!");
-        break;
-    }
+  const result = outcomes[humanChoice][computerChoice];
+  switch (result) {
+    case "win":
+      winRound();
+      break;
+    case "lose":
+      loseRound();
+      break;
+    case "tie":
+      console.log("It's a tie!");
+      break;
   }
 };
 
